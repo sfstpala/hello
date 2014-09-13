@@ -1,3 +1,18 @@
+# Copyright (c) 2014 Stefano Palazzo <stefano.palazzo@gmail.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 python ?= python3.4
 package = hello
 
@@ -25,6 +40,19 @@ bin/coverage: bin/pip
 bin/flake8: bin/pip
 	bin/pip install flake8
 
+ifdef DEB_HOST_ARCH
+DESTDIR ?= /
+PREFIX ?= usr/
+install:
+	@$(python) setup.py install --no-compile --prefix="$(PREFIX)" --root="$(DESTDIR)" --install-layout=deb
+endif
+
+deb:
+	rm -rf build; mkdir build; cp -r $$(find * -not -name "build" -prune) build
+	cd build/; debuild -us -uc -tc && lintian ../*.deb ../*.dsc ../*.changes
+
 clean:
-	rm -rf *.egg-info *.egg bin lib include pyvenv.cfg get-pip.py htmlcov .coverage
+	rm -rf *.egg-info *.egg bin lib include pyvenv.cfg
+	rm -rf build *.dsc *.tar.gz *.build *.changes *.deb
+	rm -rf get-pip.py htmlcov .coverage
 	find . -name "__pycache__" -type d | xargs rm -rf

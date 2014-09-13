@@ -8,3 +8,9 @@ __pycache__/
 /htmlcov/
 /.coverage
 get-pip.py
+/build/
+*.dsc
+*.tar.gz
+*.build
+*.changes
+*.deb
