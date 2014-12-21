@@ -3,6 +3,6 @@ python: 3.4
 env:
   - TOX_ENV=py34
 install:
-  - pip install tox check-manifest flake8
+  - pip install tox
 script:
   - tox -e $TOX_ENV
