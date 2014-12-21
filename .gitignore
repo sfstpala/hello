@@ -8,6 +8,7 @@ __pycache__/
 /pyvenv.cfg
 /htmlcov/
 /.coverage
+/.tox
 get-pip.py
 /build/
 *.dsc
