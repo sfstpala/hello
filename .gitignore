@@ -4,6 +4,7 @@ __pycache__/
 /bin/
 /include/
 /lib/
+/lib64
 /pyvenv.cfg
 /htmlcov/
 /.coverage
@@ -11,6 +12,11 @@ get-pip.py
 /build/
 *.dsc
 *.tar.gz
+*.tar.xz
 *.build
 *.changes
 *.deb
+debian/files
+debian/python3-hello.debhelper.log
+debian/python3-hello.substvars
+debian/python3-hello/

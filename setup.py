@@ -19,20 +19,20 @@ import setuptools
 setuptools.setup(
     name="hello", version="0.0.0",
     packages=setuptools.find_packages(),
-    test_suite="hello",
+    test_suite="hello.tests",
+    author="Stefano Palazzo",
+    author_email="stefano.palazzo@gmail.com",
+    url="https://github.com/sfstpala/hello/",
     description="Hello World",
     long_description="This is a pretty simple Python package.",
     license="GPLv3",
     platforms="Debian GNU/Linux",
-    author="Stefano Palazzo",
-    author_email="stefano.palazzo@gmail.com",
-    url="https://github.com/sfstpala/hello/",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.4",
     ],
     install_requires=[
-        "docopt >=0.6.1",
+        "docopt >=0.6.2",
     ],
     entry_points={
         "console_scripts": [
@@ -42,4 +42,8 @@ setuptools.setup(
     data_files=[
         ("share/man/man1", ["debian/hello.1"]),
     ],
+    package_data={
+        "hello": [
+        ],
+    },
 )

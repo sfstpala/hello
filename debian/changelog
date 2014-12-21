@@ -1,5 +1,5 @@
-hello (0.0.0) trusty; urgency=low
+hello (0.0.0) utopic; urgency=low
 
   * initial release
 
- -- Stefano Palazzo <stefano.palazzo@gmail.com>  Sat, 13 Sep 2014 23:09:58 +0200
+ -- Stefano Palazzo <stefano.palazzo@gmail.com>  Sun, 21 Dec 2014 13:54:11 +0100

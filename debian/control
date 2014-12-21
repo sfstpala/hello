@@ -8,7 +8,7 @@ Standards-Version: 3.9.5
 Package: python3-hello
 Architecture: all
 Depends: python3.4, python3-setuptools,
-         python3-docopt (>=0.6.1),
+         python3-docopt (>=0.6.2),
          ${misc:Depends}
 Homepage: https://github.com/sfstpala/hello
 Description: Hello World
