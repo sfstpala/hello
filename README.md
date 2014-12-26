@@ -31,4 +31,8 @@ To build the Debian package, run:
 
     debuild -us -uc -tc
 
-Note that you need to update `debian/changelog` as well as `setup.py` for each release.
+## Releases
+
+In order to release a new version of the package, [edit `debian/changelog`](https://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgchangelog).
+The setup script will read the version number of the package from the latest (topmost) changelog entry. The `__version__` attribute of the `hello`
+package will, in turn, be read from the package's *egg-info* using `pkg_resources`.
