@@ -17,10 +17,8 @@ python = python3.4
 
 all: hello.egg-info
 
-hello.egg-info: setup.py bin/pip bin/bumpversion
+hello.egg-info: setup.py bin/pip
 	bin/pip install --editable . && touch $@
-bin/bumpversion: bin/pip
-	bin/pip install bumpversion
 bin/pip: bin/python
 	curl https://bootstrap.pypa.io/get-pip.py | bin/python
 bin/python:

@@ -10,6 +10,7 @@ __pycache__/
 /.coverage
 /.tox
 get-pip.py
+pip-selfcheck.json
 /build/
 *.dsc
 *.tar.gz

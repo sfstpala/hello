@@ -2,7 +2,6 @@ include README.md
 include Makefile
 include tox.ini
 include .travis.yml
-include .bumpversion.cfg
 include .coveragerc
 include COPYING
 include makefile
