@@ -9,9 +9,10 @@ __pycache__/
 /htmlcov/
 /.coverage
 /.tox
-get-pip.py
-pip-selfcheck.json
+/pip-selfcheck.json
 /build/
+/share/
+/docs/
 *.dsc
 *.tar.gz
 *.tar.xz

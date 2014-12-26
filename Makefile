@@ -55,4 +55,4 @@ endif
 clean:
 	rm -rf build dist $(shell find hello -name "__pycache__")
 	rm -rf *.egg-info *.egg bin lib lib64 include share pyvenv.cfg
-	rm -rf htmlcov .coverage .tox
+	rm -rf docs htmlcov .coverage .tox pip-selfcheck.json
