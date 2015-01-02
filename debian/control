@@ -2,7 +2,10 @@ Source: hello
 Maintainer: Stefano Palazzo <stefano.palazzo@gmail.com>
 Section: python
 Priority: optional
-Build-Depends: python3.4, python3-setuptools, git-core, debhelper (>=9)
+Build-Depends: python3.4,
+               python3-setuptools,
+               git-core,
+               debhelper (>=9)
 Standards-Version: 3.9.5
 
 Package: python3-hello
