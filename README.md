@@ -27,9 +27,15 @@ The main entry point (`hello`) is available after running `make` (all):
 
 ## Packaging
 
-To build the Debian package, run:
+To set up the debian packaging environment on Ubuntu, run:
 
-    debuild -us -uc -tc
+    sudo apt-get install pbuilder debootstrap devscripts lintian
+    sudo pbuilder create --debootstrapopts --variant=buildd
+
+Afterwards, you can reproducibly build the Debian package using pbuilder:
+
+    pdebuild --buildresult dist
+    lintian --pedantic dist/*.deb dist/*.dsc dist/*.changes
 
 ## Releases
 

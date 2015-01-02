@@ -29,7 +29,7 @@ test: all bin/coverage bin/flake8 bin/check-manifest
 	bin/coverage html
 	bin/coverage report --fail-under=100
 	bin/flake8 setup.py hello
-	bin/check-manifest
+	bin/check-manifest || ! test -d .git
 	bin/python setup.py check
 bin/coverage: bin/pip
 	bin/pip install coverage
