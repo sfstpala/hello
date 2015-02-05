@@ -5,7 +5,8 @@
 
 ## Prerequisites
 
- - Python 3.4
+ - Python (2.6, 2.7, 3.2, 3.3, 3.4)
+ - VirtualEnv
  - Ubuntu 14.40 (for Debian packaging)
 
 ## Development
