@@ -1,11 +1,14 @@
 __pycache__/
+*.pyc
 /*.egg-info/
 /*.egg
+/.eggs/
 /bin/
 /include/
 /lib/
 /lib64
 /pyvenv.cfg
+/.Python
 /htmlcov/
 /.coverage
 /.tox

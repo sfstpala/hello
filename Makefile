@@ -13,16 +13,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-python = python3.4
+python ?= python3.4
+virtualenv ?= virtualenv
 
 all: hello.egg-info
 
 hello.egg-info: setup.py bin/pip
 	bin/pip install --editable . && touch $@
-bin/pip: bin/python
-	curl https://bootstrap.pypa.io/get-pip.py | bin/python
-bin/python:
-	$(python) -m venv --without-pip .
+bin/pip:
+	$(virtualenv) -p $(python) .
 
 test: all bin/coverage bin/flake8 bin/check-manifest
 	bin/coverage run setup.py test
@@ -53,6 +52,6 @@ install:
 endif
 
 clean:
-	rm -rf build dist $(shell find hello -name "__pycache__")
-	rm -rf *.egg-info *.egg bin lib lib64 include share pyvenv.cfg
+	rm -rf build dist $(shell find hello -name "__pycache__") $(shell find hello -name "*.pyc")
+	rm -rf *.egg-info *.egg .eggs bin lib lib64 include share pyvenv.cfg .Python
 	rm -rf docs htmlcov .coverage .tox pip-selfcheck.json

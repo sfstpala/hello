@@ -14,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import unittest
-import unittest.mock
+import mock
 import pkg_resources
 import hello
 
@@ -25,11 +25,12 @@ main = distribution.load_entry_point("console_scripts", "hello")
 
 class DistributionTest(unittest.TestCase):
 
-    @unittest.mock.patch("builtins.print")
-    def test_options(self, print):
+    @mock.patch("sys.stdout")
+    @mock.patch("sys.stderr")
+    def test_options(self, stderr, stdout):
         self.assertEqual(main(["--invalid-argument"]), 2)
         self.assertEqual(main(["--help"]), 0)
 
     def test_version(self):
         self.assertEqual(hello.__version__, distribution.version)
-        self.assertRegex(hello.__version__, r'\d+\.\d+\.\d+')
+        self.assertEqual(len(hello.__version__.split(".")), 3)
